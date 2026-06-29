@@ -44,4 +44,4 @@ LLMSimulator_HBF uses `config.yaml` as the main configuration file. Modify `conf
 
 ## Note
 
-This simulator was developed as part of our work, “Exploring High-Bandwidth Flash for Modern LLM Inference: Opportunities and Challenges.”
+This simulator was developed as part of our paper, “Exploring High-Bandwidth Flash for Modern LLM Inference: Opportunities and Challenges,” published in IEEE Computer Architecture Letters (CAL), 2026.
