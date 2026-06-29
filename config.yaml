@@ -8,12 +8,12 @@ system:
   nvlink_gen: 6
   infiniband_gen: 800
   num_node: 1
-  num_device: 4
+  num_device: 8
   processor_type: GPU
   distribution:
     expert_tensor_degree: 1
-    none_expert_tensor_degree: 1
-    pipeline_degree: 4
+    none_expert_tensor_degree: 8
+    pipeline_degree: 1
   optimization:
     parallel_execution: off
     hetero_subbatch: off
@@ -42,11 +42,11 @@ simulation:
   skewness: 0.0
   iter: 400
   injection_rate: 0
-  exit_out_of_memory: on 
+  exit_out_of_memory: on
   mem_cap_limit: off  # if memory usage exceed memory capacity, batchsize modifies
 
 log:
-  print_log: off
+  print_log: on
   export_gantt: off
   output_directory: ../data
   gantt_directory: ./gantt
