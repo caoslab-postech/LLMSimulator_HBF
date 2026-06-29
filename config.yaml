@@ -1,49 +1,52 @@
+
+
 model:
   model_name: llama3_405B
 
 system:
-  gpu_gen: B100 # e.g. A100, H100, B100, B200 (currently only support 4 generation)
-  nvlink_gen: 5
+  gpu_gen: HBF_8
+  nvlink_gen: 6
   infiniband_gen: 800
   num_node: 1
-  num_device: 8
+  num_device: 4
   processor_type: GPU
   distribution:
     expert_tensor_degree: 1
     none_expert_tensor_degree: 1
+    pipeline_degree: 4
   optimization:
     parallel_execution: off
     hetero_subbatch: off
-    disagg_system: off
+    disagg_system: on
     use_low_unit_moe_only: off
     use_ramulator: off
-    compressed_kv: on
-    use_absorb: on
-    use_flash_mla: on
+    compressed_kv: off
+    use_absorb: off
+    use_flash_mla: off
     use_flash_attention: on
-    reuse_kv_cache: on
+    reuse_kv_cache: off
     kv_cache_reuse_rate: 0.0
     prefill_mode: off
     decode_mode: on
 
 serving:
-  max_batch_size: 32
+  max_batch_size: 392
   max_process_token: 0
 
 simulation:
   data: synthesis
-  input_len: 1024
-  output_len: 10
-  precision_byte: 1
+  single_trace_steady_state: on
+  input_len: 1660
+  output_len: 373
+  precision_byte: 2
   skewness: 0.0
-  iter: 5
+  iter: 400
   injection_rate: 0
-  exit_out_of_memory: off
-  mem_cap_limit: off # if memory usage exceed memory capacity, batchsize modifies
-  ignore_activation_buffer_oom: off # if on, activation buffer overflow is logged but ignored for OOM decisions
+  exit_out_of_memory: on 
+  mem_cap_limit: off  # if memory usage exceed memory capacity, batchsize modifies
 
 log:
-  print_log: on
+  print_log: off
   export_gantt: off
-  output_directory: ../data/
+  output_directory: ../data
   gantt_directory: ./gantt
