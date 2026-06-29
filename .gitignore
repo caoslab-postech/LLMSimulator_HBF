@@ -1,0 +1,35 @@
+# Build artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Object / binary files
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+
+# Logs
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+.vscode/
+
+# Backup files
+*.bak
+data/
+expert_data/
+
+# Evaluation generated files / local scripts
+eval/modeling_results_all_parallelism_input_*_output_*.csv
+eval/generate_single_sequence_trace.py
+eval/pueue_decode_sweep.py
