@@ -21,7 +21,7 @@ The current HBF model is implemented at the LLMSimulator_HBF modeling level. Det
 1. Clone the repository.
 
 ```bash
-git clone https://github.com/<OWNER>/LLMSimulator_HBF.git
+git clone https://github.com/caoslab-postech/LLMSimulator_HBF.git
 cd LLMSimulator_HBF
 ```
 
